@@ -1,5 +1,6 @@
 // function to work the basic calculator
-  
+
+//Button event listener  
 var basicCalcButton = document.getElementById('basic-calc');
 basicCalcButton.addEventListener ('click', function() {
   
@@ -30,7 +31,65 @@ basicCalcButton.addEventListener ('click', function() {
   console.log(op);
   console.log(goodNumTwo);
   console.log(result);
-
-
 });
+
+//-----------------------------------------------------------------------------------------------------------------------------------
+
+//BMI Calculator
+
+//units select input change
+
+document.getElementById('bmi-units').addEventListener('change', function() {
+    console.log("changed unit");
+});
+
+//Button event listener  
+var bmiButton = document.getElementById('bmi-calc');
+bmiButton.addEventListener ('click', function() {
+  
+  //variables for units, mass and height
+  var goodMass = parseFloat(document.getElementById('bmi-mass').value);
+  var goodHeight = parseFloat(document.getElementById('bmi-height').value);
+  var units = document.getElementById('bmi-units').value;
+  var bmiResultDiv = document.getElementById('bmi-answer');
+  var bmiResult;
+
+  //calculations
+
+
+  //actions
+  bmiResultDiv.innerHTML = '<div id="bmi-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + bmiResult + '</div>';
+  bmiResultDiv.className = 'show';
+
+  console.log('button clicked');
+  console.log(units);
+  console.log(goodMass);
+  console.log(goodHeight);
+  console.log(bmiResult);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
