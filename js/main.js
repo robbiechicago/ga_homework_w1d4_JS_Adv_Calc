@@ -83,7 +83,33 @@ bmiButton.addEventListener ('click', function() {
 });
 
 
+//-----------------------------------------------------------------------------------------------------------------------------------
+//MORTGAGE CALCULATOR
 
+//Button event listener  
+var mortgageButton = document.getElementById('mortgage-calc');
+mortgageButton.addEventListener ('click', function() {
+  
+  //variables getting the numbers and hidden div
+  var goodloan = parseFloat(document.getElementById('mortgage-loan').value);
+  var goodApr = parseFloat(document.getElementById('mortgage-apr').value);
+  var goodTerm = parseFloat(document.getElementById('mortgage-term').value);
+  var mortResultDiv = document.getElementById('mortgage-answer');
+
+  //calculations
+  var uglyBit = Math.pow(1+goodApr,goodTerm);
+  var mortResult = goodloan*((goodApr*uglyBit)/uglyBit-1);
+
+  //actions
+  mortResultDiv.innerHTML = '<div id="mortgage-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + mortResult.toFixed(2) + '</div>';
+  mortResultDiv.className = 'show';
+
+  console.log('mortgage button clicked');
+  console.log(goodloan);
+  console.log(goodApr);
+  console.log(goodTerm);
+  console.log(mortResult);
+});
 
 
 
