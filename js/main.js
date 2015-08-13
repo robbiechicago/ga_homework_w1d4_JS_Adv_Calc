@@ -127,10 +127,19 @@ tripButton.addEventListener ('click', function() {
   var tripResultDiv = document.getElementById('trip-answer');
 
   //calculations
-  
+  //time calc
+  var timeResult = goodDist/goodSpeed;
+  //cost calc
+  if (goodSpeed > 60) {
+    var speedDiff = goodSpeed - 60;
+    goodMpg = goodMpg - (2*speedDiff);
+  }
+  var costResult = goodDist*goodMpg;
+
+  var tripResult = "Trip duration is " + timeResult.toFixed(2) + "hours . Cost is $" + costResult.toFixed(2);
 
   //actions
-  tripResultDiv.innerHTML = '<div id="mortgage-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + tripResult.toFixed(2) + '</div>';
+  tripResultDiv.innerHTML = '<div id="mortgage-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + tripResult + '</div>';
   tripResultDiv.className = 'show';
 
   console.log('trip button clicked');
