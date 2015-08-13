@@ -38,9 +38,17 @@ basicCalcButton.addEventListener ('click', function() {
 //BMI Calculator
 
 //units select input change
-
-document.getElementById('bmi-units').addEventListener('change', function() {
-    console.log("changed unit");
+var bmiSelecter = document.getElementById('bmi-units');
+var bmiSelectedUnit = bmiSelecter.value
+bmiSelecter.addEventListener('change', function() {
+  console.log("changed unit to " + bmiSelecter.value);
+  if (bmiSelectedUnit === 'imperial') {
+    document.getElementById('bmi-mass-unit').innerHTML = 'lb';
+    document.getElementById('bmi-height-unit').innerHTML = 'in';
+  } else {
+    document.getElementById('bmi-mass-unit').innerHTML = 'kg';
+    document.getElementById('bmi-height-unit').innerHTML = 'm';
+  };
 });
 
 //Button event listener  
