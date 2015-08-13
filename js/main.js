@@ -112,7 +112,34 @@ mortgageButton.addEventListener ('click', function() {
 });
 
 
+//-----------------------------------------------------------------------------------------------------------------------------------
+//TRIP CALCULATOR
 
+//Button event listener  
+var tripButton = document.getElementById('trip-calc');
+tripButton.addEventListener ('click', function() {
+  
+  //variables getting the numbers and hidden div
+  var goodDist = parseFloat(document.getElementById('trip-distance').value);
+  var goodMpg = parseFloat(document.getElementById('trip-mpg').value);
+  var goodCost = parseFloat(document.getElementById('trip-cost').value);
+  var goodSpeed = parseFloat(document.getElementById('trip-speed').value);
+  var tripResultDiv = document.getElementById('trip-answer');
+
+  //calculations
+  
+
+  //actions
+  tripResultDiv.innerHTML = '<div id="mortgage-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + tripResult.toFixed(2) + '</div>';
+  tripResultDiv.className = 'show';
+
+  console.log('trip button clicked');
+  console.log(goodDist);
+  console.log(goodMpg);
+  console.log(goodCost);
+  console.log(goodSpeed);
+  console.log(tripResult);
+});
 
 
 
