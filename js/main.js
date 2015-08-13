@@ -41,7 +41,9 @@ basicCalcButton.addEventListener ('click', function() {
 var bmiSelecter = document.getElementById('bmi-units');
 var bmiSelectedUnit = bmiSelecter.value
 bmiSelecter.addEventListener('change', function() {
-  console.log("changed unit to " + bmiSelecter.value);
+  bmiSelectedUnit = bmiSelecter.value
+  console.log("changed unit to " + bmiSelectedUnit);
+  //AAARGGGHH! This bit's stopped working!! #sadface
   if (bmiSelectedUnit === 'imperial') {
     document.getElementById('bmi-mass-unit').innerHTML = 'lb';
     document.getElementById('bmi-height-unit').innerHTML = 'in';
@@ -63,10 +65,14 @@ bmiButton.addEventListener ('click', function() {
   var bmiResult;
 
   //calculations
-
+  if (bmiSelectedUnit === 'imperial') {
+    bmiResult = (goodMass/(goodHeight*goodHeight))*703;
+  } else {
+    bmiResult = goodMass/(goodHeight*goodHeight);
+  };
 
   //actions
-  bmiResultDiv.innerHTML = '<div id="bmi-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + bmiResult + '</div>';
+  bmiResultDiv.innerHTML = '<div id="bmi-answer-alert" class="col-sm-offset-2 col-sm-2 alert alert-success">' + bmiResult.toFixed(2) + '</div>';
   bmiResultDiv.className = 'show';
 
   console.log('button clicked');
