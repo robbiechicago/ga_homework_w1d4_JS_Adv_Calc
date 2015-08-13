@@ -8,11 +8,11 @@
   var basicCalcButton = document.getElementById('basic-calc');
 
   basicCalcButton.addEventListener ('click', function() {
-    var goodNumOne = document.getElementById('basic-num-1').value;
-    var goodNumTwo = document.getElementById('basic-num-2').value;
+    var goodNumOne = parseFloat(document.getElementById('basic-num-1').value);
+    var goodNumTwo = parseFloat(document.getElementById('basic-num-2').value);
     console.log('button clicked');
-    console.log(goodNumOne);
-    console.log(goodNumTwo);
+    console.log(typeof(goodNumOne));
+    console.log(typeof(goodNumTwo));
   });
 
 //}
